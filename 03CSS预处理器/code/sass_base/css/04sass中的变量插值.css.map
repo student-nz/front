@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,GAAG,CAAG;EACF,KAAK,EAJF,KAAK;EAKR,MAAM,EALH,KAAK;EAMR,UAAU,EAAE,GAAG;CAClB",
+    "sources": [
+        "04sass中的变量插值.scss"
+    ],
+    "names": [],
+    "file": "04sass中的变量插值.css"
+}

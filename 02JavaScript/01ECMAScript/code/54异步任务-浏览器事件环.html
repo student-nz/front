@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>05-浏览器事件环</title>
+</head>
+
+<body>
+
+    <div></div>
+    <button class="add">添加节点</button>
+    <button class="del">删除节点</button>
+    <script>
+        /*
+                   // 1.定义一个宏任务
+                    setTimeout(function () {
+                        console.log("setTimeout1");
+                    }, 0);
+                    // 2.定义一个微任务
+                    Promise.resolve().then(function () {
+                        console.log("Promise1");
+                    });
+                    console.log("同步代码Start");
+                    Promise.resolve().then(function () {
+                        console.log("Promise2");
+                    });
+                    setTimeout(function () {
+                        console.log("setTimeout2");
+                    }, 0);
+                    console.log("同步代码End");
+                     */
+
+        /*
+        // 1.定义一个宏任务
+        setTimeout(function () {
+            console.log("setTimeout1");
+            // 2.定义一个微任务 p1
+            Promise.resolve().then(function () {
+                console.log("Promise1");
+            });
+            // 2.定义一个微任务 p2
+            Promise.resolve().then(function () {
+                console.log("Promise2");
+            });
+        }, 0);
+        // 1.定义一个宏任务
+        setTimeout(function () {
+            console.log("setTimeout2");
+            // 2.定义一个微任务 p3
+            Promise.resolve().then(function () {
+                console.log("Promise3");
+            });
+            // 2.定义一个微任务 p4
+            Promise.resolve().then(function () {
+                console.log("Promise4");
+            });
+        }, 0);
+         */
+
+        /*
+        // 1.定义一个宏任务
+        setTimeout(function () {
+            console.log("setTimeout1");
+            // 2.定义一个微任务 p2
+            Promise.resolve().then(function () {
+                console.log("Promise2");
+            });
+            // 2.定义一个微任务 p3
+            Promise.resolve().then(function () {
+                console.log("Promise3");
+            });
+        }, 0);
+        // 2.定义一个微任务 p3
+        Promise.resolve().then(function () {
+            console.log("Promise1");
+            // s2
+            setTimeout(function () {
+                console.log("setTimeout2");
+            });
+            // s3
+            setTimeout(function () {
+                console.log("setTimeout3");
+            });
+        });
+         */
+    </script>
+</body>
+
+</html>

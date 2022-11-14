@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>24函数进阶-修改函数内this指向apply方法</title>
+</head>
+
+<body>
+    <script>
+        // js修改this指向问题三种：call apply bind
+        // 2. apply 主要跟数组有关：比如：借助于数学内置对象求数组最大值，参数必须是数组(伪数组)（应用意思）
+        var o = {
+            name: 'andy'
+        };
+
+        function fn(arr) {
+            console.log(this);
+            console.log(arr); // 'pink'
+
+        };
+
+        var arr = [1, 66, 3, 99, 4];
+        var arr1 = ['red', 'pink'];
+        // var max = Math.max.apply(null, arr);
+        var max = Math.max.apply(Math, arr);
+        var min = Math.min.apply(Math, arr);
+        console.log(max, min);
+    </script>
+</body>
+
+</html>

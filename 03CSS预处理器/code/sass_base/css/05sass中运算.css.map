@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,GAAG,CAAC;EACA,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,GAAG;EACf,QAAQ,EAAE,QAAQ;EAClB,IAAI,EAAE,GAAG;EAIT,WAAW,EAAE,MAAa;CAC7B",
+    "sources": [
+        "05sass中运算.scss"
+    ],
+    "names": [],
+    "file": "05sass中运算.css"
+}

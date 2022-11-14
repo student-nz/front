@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>02vue单向数据绑定</title>
+    <!--1.下载导入Vue.js-->
+    <script src="js/vue-2.6.12.js"></script>
+</head>
+
+<body>
+
+    <!--这里就是MVVM中的View-->
+    <div id="app">
+        <p>{{ name }}</p>
+    </div>
+    <script>
+        // 这里就是MVVM中的View Model
+        let vue = new Vue({
+            el: '#app',
+            // 这里就是MVVM中的Model
+            data: {
+                name: "yjxz"
+            }
+        });
+    </script>
+</body>
+
+</html>

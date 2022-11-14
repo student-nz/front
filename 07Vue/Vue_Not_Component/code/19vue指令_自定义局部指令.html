@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>19vue指令_自定义局部指令</title>
+    <script src="js/vue-2.6.12.js"></script>
+</head>
+
+<body>
+
+    <!--这里就是MVVM中的View-->
+    <div id="app1">
+        <p v-color="'blue'">我是段落</p>
+    </div>
+    <div id="app2">
+        <p v-color="'red'">我是段落</p>
+    </div>
+    <script>
+        // 这里就是MVVM中的View Model
+        let vue1 = new Vue({
+            el: '#app1',
+            // 这里就是MVVM中的Model
+            data: {},
+            // 专门用于存储监听事件回调函数
+            methods: {}
+        });
+        // 这里就是MVVM中的View Model
+        let vue2 = new Vue({
+            el: '#app2',
+            // 这里就是MVVM中的Model
+            data: {},
+            // 专门用于存储监听事件回调函数
+            methods: {},
+            // 专门用于定义局部指令的
+            directives: {
+                "color": {
+                    // 这里的el就是被绑定指令的那个元素
+                    bind: function(el, obj) {
+                        el.style.color = obj.value;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

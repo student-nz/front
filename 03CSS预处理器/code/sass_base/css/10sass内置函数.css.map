@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,GAAG,CAAC;EACA,KAAK,EAJG,GAAc;EAKtB,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,MAAc;CAC7B",
+    "sources": [
+        "10sass内置函数.scss"
+    ],
+    "names": [],
+    "file": "10sass内置函数.css"
+}

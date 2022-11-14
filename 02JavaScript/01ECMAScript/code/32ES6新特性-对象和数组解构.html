@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>32ES6新特性-对象结构</title>
+    <script>
+        // 1. 数组解构
+        // 数组解构允许我们按照一一对应的关系从数组中提取值 然后将值赋值给变量
+        let ary = [1, 2, 3];
+        let [a, b, c, d, e] = ary;
+        console.log(a)
+        console.log(b)
+        console.log(c)
+        console.log(d)
+        console.log(e)
+            // 2. 对象解构
+            // 对象解构允许我们使用变量的名字匹配对象的属性 匹配成功 将对象属性的值赋值给变量
+        let person = {
+            name: 'yjxz',
+            age: 21,
+            sex: '男'
+        };
+        let {
+            name,
+            age,
+            sex
+        } = person;
+        console.log(name)
+        console.log(age)
+        console.log(sex)
+
+        let {
+            name: myName
+        } = person;
+        console.log(myName)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

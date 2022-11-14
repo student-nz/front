@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>16WebAPI-DOM-事件执行的三个阶段</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .father {
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+        
+        .son {
+            width: 150px;
+            height: 150px;
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        /* 
+                1.事件的三个阶段
+                    1.捕获阶段(从外向内的传递事件)
+                    2.当前目标阶段
+                    3.冒泡的阶段(从内向外的传递事件)
+                    三个阶段只有两个会被同时执行
+                */
+        /*
+        2.如何设置事件到底是捕获还是冒泡?
+            通过addEventListener方法, 这个方法接收三个参数
+                第一个参数: 事件的名称
+                第二个参数: 回调函数
+                第三个参数: false冒泡  / true 捕获
+            onXxx的属性, 不接收任何参数, 所以默认就是冒泡
+            attachEvent方法, 只能接收两个参数, 所以默认就是冒泡
+        */
+        let oFDiv = document.querySelector(".father");
+        let oSDiv = document.querySelector(".son");
+        /*
+        oFDiv.addEventListener("click", function () {
+            console.log("father");
+        }, false);
+        oSDiv.addEventListener("click", function () {
+            console.log("son");
+        }, false);
+        */
+        oFDiv.onclick = function() {
+            console.log("father");
+        }
+        oSDiv.onclick = function() {
+                console.log("son");
+            }
+            // 3. 不是所有的事件都能冒泡，以下事件不冒泡：blur、focus、load、unload
+    </script>
+</body>
+
+</html>

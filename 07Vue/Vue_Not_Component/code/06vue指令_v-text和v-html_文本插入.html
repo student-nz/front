@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>06vue指令_v-text和v-html_文本插入</title>
+    <script src="js/vue-2.6.12.js"></script>
+</head>
+
+<body>
+
+    <!--这里就是MVVM中的View-->
+    <div id="app">
+        <!--插值的方式: 可以将指定的数据插入到指定的位置-->
+        <p>++++{{ name }}++++</p>
+        <!--插值的方式: 不会解析HTML-->
+        <p>++++{{ msg }}++++</p>
+        <!--v-text的方式: 会覆盖原有的内容-->
+        <p v-text="name">++++++++</p>
+        <!--v-text的方式: 也不会解析HTML-->
+        <p v-text="msg">++++++++</p>
+        <!--v-html的方式: 会覆盖原有的内容-->
+        <p v-html="name">++++++++</p>
+        <!--v-html的方式:会解析HTML-->
+        <p v-html="msg">++++++++</p>
+    </div>
+    <script>
+        // 这里就是MVVM中的View Model
+        let vue = new Vue({
+            el: '#app',
+            // 这里就是MVVM中的Model
+            data: {
+                name: "yjxz",
+                msg: "<span>我是span</span>"
+            }
+        });
+    </script>
+</body>
+
+</html>

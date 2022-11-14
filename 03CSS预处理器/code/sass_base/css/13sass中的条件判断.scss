@@ -1,0 +1,29 @@
+@mixin triangle($dir, $width, $color) {
+    width: 0;
+    height: 0;
+    border-width: $width;
+    border-style: solid solid solid solid;
+    @if($dir==Up) {
+        border-color: transparent transparent $color transparent;
+    }
+    @else if($dir==Down) {
+        border-color: $color transparent transparent transparent;
+    }
+    @else if($dir==Left) {
+        border-color: transparent $color transparent transparent;
+    }
+    @else if($dir==Right) {
+        border-color: transparent transparent transparent $color;
+    }
+}
+
+div {
+    //width: 0;
+    //height: 0;
+    //border-width: 10px 10px 10px 10px;
+    //border-style: solid solid solid solid;
+    //border-color: #000 transparent transparent transparent;
+    // @include triangle(50px, blue);
+    @include triangle(Up, 50px, blue);
+    // @include triangle(Left, 50px, blue);
+}

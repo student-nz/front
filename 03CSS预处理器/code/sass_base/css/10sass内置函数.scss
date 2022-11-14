@@ -1,0 +1,9 @@
+@function square($num) {
+    @return $num * $num+px;
+}
+
+div {
+    width: square(2);
+    height: 200px;
+    background: mix(red, blue);
+}

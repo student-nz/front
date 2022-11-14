@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>13vue指令_v-on_绑定事件</title>
+    <script src="js/vue-2.6.12.js"></script>
+</head>
+
+<body>
+    <!--这里就是MVVM中的View-->
+    <div id="app">
+        <!-- 原生点击 -->
+        <!-- <button onclick="alert('yjxz')">我是按钮</button> -->
+        <!-- 1.通过v-on来绑定监听事件, 在指定事件名称的时候不需要写on，但在赋值的时候必须赋值一个回调函数的名称.否则报错! -->
+        <!-- <button v-on:click="alert('yjxz')">我是按钮</button> -->
+        <!-- 3.当绑定的事件被触发后, 会调用Vue实例的methods对象中对应的回调函数 -->
+        <!-- <button v-on:click="myFn">我是按钮</button> -->
+        <button @click="myFn">我是按钮</button>
+    </div>
+    <script>
+        // 这里就是MVVM中的View Model
+        let vue = new Vue({
+            el: '#app',
+            // 这里就是MVVM中的Model
+            data: {},
+            methods: {
+                myFn() {
+                    alert('yjxz')
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAmBA,AAAA,GAAG,CAAC;EAlBA,KAAK,EAAE,CAAC;EACR,MAAM,EAAE,CAAC;EACT,YAAY,EAuBU,IAAI;EAtB1B,YAAY,EAAE,uBAAuB;EAEjC,YAAY,EAAE,WAAW,CAAC,WAAW,CAoBb,IAAI,CApBiB,WAAW;CAsB/D",
+    "sources": [
+        "13sass中的条件判断.scss"
+    ],
+    "names": [],
+    "file": "13sass中的条件判断.css"
+}

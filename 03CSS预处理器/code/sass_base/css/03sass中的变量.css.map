@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAMA,AAAA,KAAK,CAAC;EAEF,KAAK,EADD,KAAK;EAET,MAAM,EANN,KAAK;EAOL,UAAU,EAAE,GAAG;EACf,aAAa,EAAE,IAAI;CACtB;;AAED,AAAA,KAAK,CAAC;EACF,KAAK,EAfL,KAAK;EAgBL,MAAM,EAbN,KAAK;EAcL,UAAU,EAAE,IAAI;CACnB",
+    "sources": [
+        "03sass中的变量.scss"
+    ],
+    "names": [],
+    "file": "03sass中的变量.css"
+}

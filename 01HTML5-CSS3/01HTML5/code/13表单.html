@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13表单</title>
+</head>
+
+<body>
+
+    <!-- 表单域 -->
+    <form action="12列表.html" method="POST" name="yjxz1"></form>
+    <form action="12列表.html" method="GET" name="yjxz2"></form>
+
+    <!-- 表单元素 -->
+    <form action="12列表.html" method="POST" name="yjxz3">
+        <!-- 文本框 -->
+        用户名：<input type="text" name="uname" value="请输入用户名" maxlength="10">
+        <br>
+        <br>
+        <!-- 密码框 -->
+        密码：<input type="password" name="password" value="请输入密码：">
+        <br>
+        <br>
+        <!-- 单选按钮 -->
+        性别：男<input type="radio" name="sex" value="男">女<input type="radio" name="sex" value="女" checked>
+        <br>
+        <br>
+        <!-- 复选框 -->
+        爱好：
+        <inpUt type="checkbox" name="hobby" value="打游戏">打游戏 <input type="checkbox" name="hobby" value="看小说">看小说<input type="checkbox" name="hobby" value="打球" checked>打球
+        <br>
+        <br>
+        <!-- 提交按钮 -->
+        <input type="sumbit" value="注册用户">
+        <!-- 重置按钮 -->
+        <input type="reset" value="重置信息">
+        <!-- 普通按钮 -->
+        <input type="button" value="获取验证码信心" onclick="alert('yjxz')">
+        <!-- 图片按钮 -->
+        <input type="image" value=" 图片按钮 " src="images/register.jpg ">
+        <br>
+        <br>
+        <!-- 文件域单选 -->
+        <input type="file ">
+        <!-- 文件域多选 -->
+        <input type="file " multiple>
+        <br>
+        <br>
+        <!-- label标签 -->
+        <label for="name2 ">用户名：</label><input type="text " name="uname " value="请输入用户名： " maxlength="10 " id="name2 ">
+        <br>
+        <br>
+        <input type="radio " name="sex2 " id="nan "> <label for="nan ">男</label>
+        <input type="radio " name="sex2 " id="nv "><label for="nv ">女</label>
+        <br>
+        <br>
+        <!-- 下拉表单 -->
+        <select name=" " id=" ">
+            <option name="hunnan " value="湖南 ">湖南</option>
+            <option name="hubei " value="湖北 " selected="selected ">湖北</option>
+            <option name="jiangxi " value="江西 ">江西</option>
+            <option name="广东 " value="广东 ">广东</option>
+        </select>
+        <br>
+        <br>
+        <textarea name="textarea " id=" " cols="30 " rows="10 ">政哥威武</textarea>
+        <br>
+        <br>
+        <!-- 隐藏域 -->
+        <input type="hidden " name="yjxz " value="yjxz ">
+        <br>
+        <br>
+        <!-- 占位符 -->
+        <label for="name3 ">用户名：</label><input type="text " name="uname3 " maxlength="10 " placeholder="请输入用户名 " id="name3 ">
+        <br>
+        <label for="password3 ">用户名：</label><input type="text " name="uname3 " maxlength="10 " placeholder="请输入密码 " id="password3 ">
+        <br>
+    </form>
+
+    <h4>HTML5新增表单元素</h4>
+
+    <form action="12列表.html">
+        <!-- 选项卡形式 -->
+        <fieldset>
+            <legend>注册界面</legend>
+            <!-- 邮箱 -->
+            邮箱：<input type="email">
+            <br>
+            <br>
+            <!-- 域名 -->
+            域名：<input type="url">
+            <br>
+            <br>
+            <!-- 数字 -->
+            订单数量：<input type="number">
+            <br>
+            <br>
+            <!-- 日历 -->
+            时间：<input type="date">
+            <br>
+            <br> 颜色：
+            <input type="color">
+            <br>
+            <br>
+            <input type="submit">
+            <br>
+            <br>
+            <!-- 下拉列表分组 -->
+            <select name="" id="">
+                <optgroup label="北京">
+                    <option value="">朝阳区</option>
+                    <option value="" selected="selected">昌平区</option>
+                    <option value="">通州区</option>
+                </optgroup>
+                <optgroup label="广州">
+                    <option>天河区</option>
+                    <option>越秀区</option>
+                    <option>黄浦区</option>
+                </optgroup>
+            </select>
+        </fieldset>
+
+    </form>
+
+</html>

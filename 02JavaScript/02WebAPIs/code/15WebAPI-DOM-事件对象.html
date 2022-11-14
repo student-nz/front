@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>40-JavaScript-事件对象</title>
+</head>
+
+<body>
+    <button id="btn">我是按钮</button>
+    <a href="http://www.it666.com">知播渔教育</a>
+    <script>
+        // 1. 事件对象就是一个系统自动创建的一个对象， 当注册的事件被触发的时候, 系统就会自动创建事件对象
+
+        /* 
+        2. 事件对象浏览器兼容问题
+         在高级版本的浏览器中, 会自动将事件对象传递给回到函数
+         在低级版本的浏览器中,不会自动将事件对象传递给回调函数，需要通过window.event来获取事件对象 
+        */
+        // var oBtn = document.getElementById("btn");
+        // oBtn.onclick = function(event) {
+        //     // 兼容性的写法
+        //     event = event || window.event;
+        //     // alert("666");
+        //     console.log(event);
+        //     console.log(typeof event);
+        // }
+        let oA = document.querySelector("a");
+        // event只是一个形参，名字自定义
+        oA.onclick = function(event) {
+            // 兼容性的写法
+            event = event || window.event;
+
+            alert("666");
+            // 事件类型
+            alert(event.type)
+                // 阻止默认行为
+            return false;
+            // preventDefault方法只支持高级版本的浏览器（阻止默认行为）
+            // event.preventDefault();
+        }
+    </script>
+</body>
+
+</html>

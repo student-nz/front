@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>23函数进阶-修改函数内this指向call方法</title>
+</head>
+
+<body>
+    <script>
+        // js修改this指向问题三种：call apply bind
+
+        // 1. call()主要用于继承（呼叫意思）
+        var o = {
+            name: 'andy'
+        }
+
+        function fn(a, b) {
+            console.log(this);
+            console.log(a + b);
+
+        };
+        fn.call(o, 1, 2);
+
+        function Father(uname, age, sex) {
+            this.uname = uname;
+            this.age = age;
+            this.sex = sex;
+        }
+
+        function Son(uname, age, sex) {
+            Father.call(this, uname, age, sex);
+        }
+        var son = new Son('刘德华', 18, '男');
+        console.log(son);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>11JS作用域</title>
+    <script>
+        // 1. 全局作用域：整个script标签 或者是一个单独的js文件,只有浏览器关闭的时候才会销毁,比较占内存资源
+        var num1 = 12; // 我是全局作用域,整个script标签 或者是一个单独的js文件起作用
+        console.log(num1);
+
+        // 2. 局部作用域（函数作用域）：只在函数内部起作用,程序执行完毕就会销毁,比较节约内存资源
+        function fn1() {
+            var num2 = 13;
+            console.log(num1)
+            console.log(num2);
+        }
+        fn1();
+        // console.log(num2); // 报错，局部作用域，只在局部生效
+
+        // 3. ES6之前，JS的我没有块作用域
+        if (3 < 5) {
+            var num3 = 10;
+        }
+        console.log(num3); // num3输出不是10
+
+        // 4. 作用域链：内部函数访问外部函数的变量，采取的是链式查找的方式来决定取那个值 这种结构我们称为作用域链   就近原则
+        function fn2() {
+            var num4 = 20;
+
+            function fun1() {
+                console.log(num4);
+            }
+            fun1(); // 形成了作用域链
+        }
+        fn2();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>45vuex-getters</title>
+    <script src="js/vue-2.6.12.js"></script>
+    <script src="js/vuex.js"></script>
+</head>
+
+<body>
+    <!--这里就是MVVM中的View-->
+    <div id="app">
+        <father></father>
+    </div>
+    <template id="father">
+        <div>
+            {{this.$store.getters.formart}}
+            {{this.$store.getters.formart}}
+            {{this.$store.getters.formart}}
+        </div>
+    </template>
+
+    <script>
+        const store = new Vuex.Store({
+            // state: 用于保存共享数据
+            state: {
+                msg: "政哥"
+            },
+            // mutations: 用于保存修改共享数据的方法
+            mutations: {},
+            getters: {
+                formart(state) {
+                    console.log("getters方法被执行了");
+                    return state.msg + "www.it666.com"
+                }
+            }
+        });
+        // 爸爸组件
+        Vue.component("father", {
+            template: "#father",
+            store: store,
+        });
+        // 这里就是MVVM中的View Model
+        let vue = new Vue({
+            el: '#app',
+            // 这里就是MVVM中的Model
+            data: {},
+            // 专门用于存储监听事件回调函数
+            methods: {},
+            // 专门用于定义计算属性的
+            computed: {},
+            // 专门用于定义局部组件的
+            components: {}
+        });
+    </script>
+</body>
+
+</html>

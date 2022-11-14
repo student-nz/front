@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>19定义属性</title>
+    <script>
+        // Object.defineProperty() 定义新属性或修改原有的属性
+        var obj = {
+            id: 1,
+            pname: '小米',
+            price: 1999
+        };
+        // 1. 以前的对象添加和修改属性的方式
+        // obj.num = 1000;
+        // obj.price = 99;
+        // console.log(obj);
+        // 2. Object.defineProperty() 定义新属性或修改原有的属性
+        Object.defineProperty(obj, 'address', {
+            // value: 设置属性的值
+            value: '中国山东蓝翔技校xx单元',
+            //  writable: 值是否可以重写。true | false 
+            writable: false,
+            // enumerable: 目标属性是否可以被枚举。true | false 
+            enumerable: true,
+            // configurable: 目标属性是否可以被删除或是否可以再次修改特性 true | false
+            configurable: true
+        });
+        obj.address = '你好'; // 修改不了
+        console.log(obj.address);
+        console.log(obj.address);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>15JS内置对象Date</title>
+    <script>
+        // 1. 格式化日期 年月日 
+        var date = new Date();
+        // 2. 当前日期的年
+        console.log(date.getFullYear());
+        // 3. 当前日期的月份（时区问题 需 +1）
+        console.log(date.getMonth() + 1);
+        // 4. 当前日期对应几号
+        console.log(date.getDate());
+        // 5. 周几（周一返回 1，周日返回 0，最大即为 6）
+        console.log(date.getDay());
+        // 6. 写一个当前年月日星期几
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var dates = date.getDate();
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        var day = date.getDay();
+        console.log('今天是：' + year + '年' + month + '月' + dates + '日 ' + arr[day]);
+        // 7. 封装时分秒
+        function getTimer() {
+            var time = new Date();
+            // 8. 当前小时
+            var h = time.getHours();
+            // 9. 当前分钟
+            h = h < 10 ? '0' + h : h;
+            var m = time.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            // 10. 当前秒数
+            var s = time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return h + ':' + m + ':' + s;
+        }
+        console.log(getTimer());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

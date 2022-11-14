@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA;;;;;;GAMG;AAQH,AAAA,KAAK,CAAC;EALF,KAAK,EASQ,KAAK;EARlB,MAAM,EAQc,KAAK;EAPzB,UAAU,EAOiB,GAAG;CACjC;;AAED,AAAA,KAAK,CAAC;EAZF,KAAK,EADM,KAAK;EAEhB,MAAM,EAFgB,KAAK;EAG3B,UAAU,EAgBO,IAAI;CACxB",
+    "sources": [
+        "07sass中带参数混合.scss"
+    ],
+    "names": [],
+    "file": "07sass中带参数混合.css"
+}

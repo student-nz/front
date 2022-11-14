@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10函数</title>
+    <script>
+        // 1. 有名函数
+        function getSum1(num1, num2) {
+            var sum = 0;
+            for (var i = num1; i <= num2; i++) {
+                sum += i;
+            }
+            console.log(sum);
+        }
+        // getSum1(1, 100);
+        // 2. 匿名函数
+        var getSum2 = function(num1, num2) {
+                var sum = 0;
+                for (var i = num1; i <= num2; i++) {
+                    sum += i;
+                }
+                console.log(sum);
+            }
+            // 3. 函数调用,实参形参个数，参数匹配，输出正确结果
+        getSum2(1, 100);
+        // 4. 函数调用,实参多于形参个数，参数不匹配，只取形参
+        getSum2(1, 100, 100);
+        // 5. 函数调用,实参少于形参个数，参数不匹配，多的形参定义为undefined
+        getSum2(1);
+
+        // 6. 不知函数到底接收多少参数采用arguments（伪数组）,只有函数才有 arguments对象  而且是每个函数都内置好了这个arguments
+        // 伪数组供遍历，不提供pop、push等操作方法
+        function fn1() {
+            // console.log(arguments); // 里面存储了所有传递过来的实参  arguments = [1,2,3]
+            // console.log(arguments.length);
+            // console.log(arguments[2]);
+            // 照数组方式遍历arguments
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+
+            }
+        }
+        fn1(1, 2, 3);
+        fn1(1, 2, 3, 4, 5);
+        // 7. 函数无return返回值时，调用函数。返回值均为undefined
+        console.log(fn1(1, 2, 3))
+            // 8. JS中，函数也属于对象
+        console.log(fn1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07简单数据类型-Undefined和Null </title>
+    <script>
+        // 1. 变量声明未赋值 即 undefined（未定义数据类型）
+        var str;
+        console.log(str);
+        // 2. 赋值undefined的变量与字符串类型相加情况 
+        var variable = undefined;
+        console.log(variable + 'yjxz'); // undefinedyjxz
+        // 3.  赋值undefined的变量与数值类型相加情况
+        console.log(variable + 1); // NaN  undefined 和数字相加 最后的结果是 NaN
+        // 4. 赋值null空值的变量与字符串类型相加情况
+        var space = null;
+        console.log(space + 'yjxz'); // nullyjxz
+        // 5. 赋值null空值的变量与数值类型相加情况
+        console.log(space + 1); // 1
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

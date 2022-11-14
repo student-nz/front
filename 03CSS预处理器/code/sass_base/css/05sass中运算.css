@@ -1,0 +1,9 @@
+div {
+  width: 200px;
+  height: 200px;
+  background: red;
+  position: absolute;
+  left: 50%;
+  margin-left: -255px;
+}
+/*# sourceMappingURL=05sass中运算.css.map */

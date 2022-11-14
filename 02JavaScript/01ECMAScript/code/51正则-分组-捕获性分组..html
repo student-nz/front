@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>51正则-分组-捕获性分组.</title>
+</head>
+
+<body>
+    <script>
+        // 1. 在正则表达式中,使用“（）”进行分组，一对圆括号括起来的表达式就是一个分组
+        // 2. 捕获: 将匹配到的子表达式保存在RegExp对象中
+        // 3. 分组后所保存的子表达式
+        // Reg.Exp.$1：保存第一个子表达式
+        // Reg.Exp.$2：保存第二个子表达式
+        // Reg.Exp.$n：保存第n个子表达式
+
+        // 4. 反向引用所指向的子表达式
+        // \1:指向RegExp.$1
+        // \2:指向RegExp.$2
+        // \n:指向RegExp.$n
+
+        var rel = /([0-9])([0-9])([0-9])/;
+        var text = "239";
+        var matches = text.match(rel);
+        console.log(matches);
+        //["239","2","3","9"]
+        console.log('-------------------------------------');
+
+        // 5. 捕获性分组工作模式（） 会把每个分组里匹配的值保存起来， 方便接下来的操作
+        // 6. 捕获先整体再局部（\s空白字符）
+        var rel = /([a-z]+)\s([a-z]+)/;
+        var text = "alen turing";
+        var matches = text.match(rel);
+        console.log(matches);
+        console.log(matches[0])
+        console.log(matches[1])
+        console.log(matches[2])
+            //["alen turing", "alen", "turing"]
+        console.log('1-------------------------------------');
+
+        // 7. 例一：倒置字符串
+        // 方法一：通过exec函数
+        var rel = /([a-z]+)\s([a-z]+)/;
+        var text = "alen turing";
+        // exec返回一个数组，包含匹配到字符串以及分组(子串)里的值
+        var arr = rel.exec(text);
+        console.log(arr); //["alen turing","alen","turing"]
+        console.log(arr[0]); //"alen turing"
+        console.log(arr[1]); //"alen"
+        console.log(arr[2]); //"turing"
+
+        var arr_2 = arr[2] + " " + arr[1];
+        console.log(arr_2); //"turing alen"
+        console.log('-------------------------------------');
+
+        // 方法二：通过属性$ 1-9
+        var rel = /([a-z]+)\s([a-z]+)/;
+        var text = "alen turing";
+        //这种方式的话，正则表达式必须至少运行一次，我们使用test()
+        rel.test(text);
+        console.log(RegExp.$1); //"alen"
+        console.log(RegExp.$2); //"turing"
+        var arr_2 = RegExp.$2 + ' ' + RegExp.$1;
+        console.log(arr_2); //"turing alen"
+        console.log('11-------------------------------------');
+
+        // 方法三：通过替换（）
+        var rel = /([a-z]+)\s([a-z]+)/;
+        var text = "alen turing";
+
+        var arr_2 = text.replace(rel, "$2 $1");
+        console.log(arr_2); //"turing alen"
+        console.log('22-------------------------------------');
+
+        // 8. 例二 ：反向引用
+        // 捕获可以反向引用（在表达式中直接使用某个分组的内容)
+        var rel = /(\d(\d)\d)\d/;
+        var text = "2589";
+        var matches = text.match(rel);
+        console.log(matches);
+        //["2589", "258", "5"]
+        console.log(RegExp.$1)
+        console.log(RegExp.$2)
+        console.log('33-------------------------------------');
+
+        // 使用'\ num'（num是编号）这个方法就可以实现在表达式中引用捕获组的内容
+        // 捕获组的分组规则：
+        // 从左向右， 分组以左括号为标志， 第一个出现的分组的组号为1， 第二个为2， 以此类推
+        var rel = /(\d(\d)\d)\d/;
+        var text = "2589";
+        var matches = text.match(rel);
+        console.log(RegExp.$1)
+        console.log(RegExp.$2)
+        console.log('44-------------------------------------');
+        //["2589", "258", "5"]
+        // 这里可以看出比赛[0]：2589的比赛[1]：258的比赛[2]：5
+    </script>
+</body>
+
+</html>

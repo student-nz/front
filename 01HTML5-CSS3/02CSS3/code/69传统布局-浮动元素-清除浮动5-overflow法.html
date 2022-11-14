@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>69传统布局-浮动元素-清除浮动5-overflow法</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*
+            div{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                overflow: hidden;
+            }
+            */
+        /*
+            .box1{
+                background-color: red;
+                overflow: hidden;
+                *zoom:1;
+            }
+            .box2{
+                background-color: green;
+            }
+            .box1 p{
+                width: 100px;
+                background-color: blue;
+            }
+            .box2 p{
+                width: 100px;
+                background-color: yellow;
+            }
+            p{
+                float: left;
+            }
+            */
+        
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /*border: 1px solid #000;*/
+            overflow: hidden;
+        }
+        
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+    <div>我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字</div>
+    -->
+
+    <!--
+    <div class="box1">
+        <p>我是文字1</p>
+        <p>我是文字1</p>
+        <p>我是文字1</p>
+    
+    </div>
+    
+    <div class="box2">
+        <p>我是文字2</p>
+        <p>我是文字2</p>
+        <p>我是文字2</p>
+    </div>
+    -->
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+
+</html>

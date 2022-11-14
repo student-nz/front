@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06简单数据类-String</title>
+    <script>
+        // 1. 定义yjxz变量赋值
+        var yjxz = 'zhengzhengzheng';
+        // 2. 输出yjxz字符串变量长度
+        console.log(yjxz);
+        // 3. + 拼接字符串
+        console.log(yjxz + '第一次拼接');
+        console.log(yjxz.concat('第二次拼接'))
+            // 4. 从前往后查找字符在字符串的首次出现的位置,找不到返回-1
+        console.log(yjxz.indexOf('z'));
+        // 5. 从后往前查找字符在字符串的首次出现的位置，找不到返回-1
+        console.log(yjxz.lastIndexOf('z'))
+            // 6. 返回指定位置的字符
+        console.log(yjxz.charAt(0));
+        console.log(yjxz[0]);
+        // 7. 获取指定位置的ASCII码
+        console.log(yjxz.charCodeAt(0));
+        // 8. 从指定位置开始截取指定长度的子字符串
+        console.log(yjxz.substring(0, 10));
+        // 9. 从指定位置开始截取到指定位置
+        console.log(yjxz.slice(0, 10)); // 接收负数
+        console.log(yjxz.substring(0, 10)); // 不接收负数
+        // 10. 将字符串内第一个复合匹配情况的子串替换成另外一子串
+        console.log(yjxz.replace('zheng', 'yjxz'));
+        // 11. 将字符串切分为数组
+        console.log(yjxz.split('g'));
+        // 12. 字符串转大写
+        console.log(yjxz.toUpperCase());
+        // 13. 字符串转小写
+        console.log(yjxz.toLowerCase());
+        // 14. 转换为字符串
+        var num = 1;
+        console.log(num.toString());
+        console.log(String(num)); // 强制转换
+        console.log('----------------------------')
+            // 15. 双引号 "" 和 单引号''包裹起来的文本称为字符串
+        var str1 = "sss";
+        var str2 = 'sss';
+        // 16. 字符串引号嵌套 可以用''包含"",也可以用"" 包含'',不能 单双引号搭配（'What on earth?"; // 报错）
+        var str3 = '"sss"';
+        var str4 = "'ss'";
+        // var str5 = '"'";// 报错
+        // 17. 字符串转移字符
+        console.log('转义字符换行\n\n')
+        console.log('转义字符斜杠\\')
+        console.log('转义字符单引号\'')
+        console.log('转义字符双引号"')
+        console.log('转移字符缩进\t转移字符缩进\t转移字符缩进')
+        console.log('转移字符空\b转移字符空格\b转移字符空格')
+            // 18. 去除字符串两边空格
+        var str3 = '   22   ';
+        console.log(str3.trim());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

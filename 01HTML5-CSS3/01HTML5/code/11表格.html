@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>11.表格</title>
+</head>
+
+<body>
+    <!-- 1. 基本结构 -->
+    <table>
+        <tr>
+            <td>
+                姓名
+            </td>
+            <td>
+                性别
+            </td>
+            <td>年龄</td>
+        </tr>
+        <tr>
+            <td>yjxz</td>
+            <td>男</td>
+            <td>18</td>
+        </tr>
+    </table>
+    <!-- 2. 表头单元格 -->
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+
+        </tr>
+        <tr>
+            <td>yjxz</td>
+            <td>男</td>
+            <td>21</td>
+        </tr>
+    </table>
+    <!-- 今日小说榜 -->
+    <table>
+        <!-- 1. 表头区域 -->
+        <thead>
+            <tr>
+                <th>排名</th>
+                <th>书名</th>
+                <th>趋势</th>
+                <th>访问量</th>
+                <th>火热度</th>
+                <th>相关链接</th>
+            </tr>
+        </thead>
+        <!-- 2. 表体区域 -->
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>西游记</td>
+                <td><img src="down.jpg" alt=""></td>
+                <td>222</td>
+                <td>222</td>
+                <td> <a href="javascript:">贴吧</a> <a href="javascript:">图片</a> <a href="javascript:">百科</a> </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>红楼梦</td>
+                <td><img src="down.jpg" alt=""></td>
+                <td>222</td>
+                <td>222</td>
+                <td> <a href="javascript:">贴吧</a> <a href="javascript:">图片</a> <a href="javascript:">百科</a> </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>水浒传</td>
+                <td><img src="up.jpg" alt=""></td>
+                <td>222</td>
+                <td>222</td>
+                <td> <a href="javascript:">贴吧</a> <a href="javascript:">图片</a> <a href="javascript:">百科</a> </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>三国演义</td>
+                <td><img src="down.jpg" alt=""></td>
+                <td>222</td>
+                <td>222</td>
+                <td> <a href="javascript:">贴吧</a> <a href="javascript:">图片</a> <a href="javascript:">百科</a> </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 今日小说榜 -->
+    <table align="center" width="500px" height="250px" border="1" cellspacing="0">
+        <!-- 表格标题 -->
+        <caption>
+            <h2>今日小说排行榜</h2>
+        </caption>
+
+        <!-- 1. 表头区域 -->
+        <thead>
+            <tr>
+                <th>排名</th>
+                <th>书名</th>
+                <th>趋势</th>
+                <th>访问量</th>
+                <th>火热度</th>
+                <th>相关链接</th>
+            </tr>
+        </thead>
+        <!-- 2. 表体区域 -->
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>西游记</td>
+                <td align="center"><img src="down.jpg" alt=""></td>
+                <td>222</td>
+                <td>222</td>
+                <td> <a href="javascript:">贴吧</a> <a href="javascript:">图片</a> <a href="javascript:">百科</a> </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>红楼梦</td>
+                <td align="center"><img src="down.jpg" alt=""></td>
+                <td>222</td>
+                <td>222</td>
+                <td> <a href="javascript:">贴吧</a> <a href="javascript:">图片</a> <a href="javascript:">百科</a> </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>水浒传</td>
+                <td align="center"><img src="up.jpg" alt=""></td>
+                <td>222</td>
+                <td>222</td>
+                <td> <a href="javascript:">贴吧</a> <a href="javascript:">图片</a> <a href="javascript:">百科</a> </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>三国演义</td>
+                <td align="center"><img src="down.jpg" alt=""></td>
+                <td>222</td>
+                <td>222</td>
+                <td> <a href="javascript:">贴吧</a> <a href="javascript:">图片</a> <a href="javascript:">百科</a> </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 学生信息表 -->
+    <table border="1" width="500" height="300" cellspacing="0">
+        <!-- 表格标题 -->
+        <caption>
+            <h3>优秀学生信息表格</h3>
+        </caption>
+        <tr>
+            <th>年级</th>
+            <th>姓名</th>
+            <th>学号</th>
+            <th>班级</th>
+        </tr>
+        <tr>
+            <!-- 跨行合并 -->
+            <td rowspan="2">高三</td>
+            <td>迪丽热巴</td>
+            <td>110</td>
+            <td>三年二班</td>
+        </tr>
+        <tr>
+            <td>古力娜扎</td>
+            <td>120</td>
+            <td>三年三班</td>
+        </tr>
+        <tr>
+            <td>评语</td>
+            <!-- 跨列合并 -->
+            <td colspan="3">你们很优秀</td>
+
+        </tr>
+    </table>
+
+    <table border="2px" bordercolor="red" align="center" cellspacing="0" cellpadding="10px">
+        <caption>影视评分表</caption>
+        <!-- 跨行 跨列 -->
+        <tr align="center">
+            <td rowspan="3">动画片</td>
+            <td colspan="3">国际片</td>
+        </tr>
+        <tr align="center">
+            <td>电影</td>
+            <td>主演</td>
+            <td>评分</td>
+        </tr>
+        <tr align="center">
+            <td>千与千寻</td>
+            <td>東榴美</td>
+            <td>9.5</td>
+        </tr>
+
+    </table>
+
+
+</body>
+
+</html>

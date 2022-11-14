@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>05WebAPI-DOM-元素属性操作</title>
+</head>
+
+<body>
+    <img src="images/ad1.jpg" alt="我是alt" title="我是title" yjxz="666">
+    <div getTime="20" data-index="2" data-list-name="andy"></div>
+    <script>
+        // //  1. 通过document创建还是查询出来的标签,系统都会将元素包装成一个对象返回给我们,这元素对象包含了属性
+        // let oImg = document.querySelector("img");
+        // // let oImg = document.createElement("img");
+        // console.dir(oImg);
+
+        // // 2.获取元素属性
+        // // 通过对象.属性名称的方式无法获取到自定义属性的取值
+        // // 通过getAttribute方法可以获取到自定义属性的取值
+        // let oImg = document.querySelector("img");
+        // console.log(oImg.alt);
+        // console.log(oImg.getAttribute("alt"));
+        // console.log(oImg.yjxz);
+        // console.log(oImg.getAttribute("yjxz"));
+
+        // 2.修改元素属性
+        // let oImg = document.querySelector("img");
+        // oImg.title = "新的title";
+        // oImg.setAttribute("title", "新的title222");
+        // 点和获取元素属性一样
+        // oImg.yjxz = "123";
+        // oImg.setAttribute("yjxz", "123");
+
+        // 3.新增元素属性
+        // let oImg = document.querySelector("img");
+        // oImg.yjxz02 = "yjxz02";
+        // 注意：setAttribute方法,如果属性不存在就是新增, 如果属性存在就是修改
+        // oImg.setAttribute("yjxz02", "yjxz02");
+
+        // 4.删除元素属性
+        let oImg = document.querySelector("img");
+        // oImg.alt = "";
+        // oImg.removeAttribute("alt");
+        // 点和获取元素属性一样,
+        // oImg.yjxz = "";
+        // oImg.removeAttribute("yjxz");
+
+        var div = document.querySelector('div');
+        // console.log(div.getTime);
+        console.log(div.getAttribute('getTime'));
+        div.setAttribute('data-time', 20);
+        console.log(div.getAttribute('data-index'));
+        console.log(div.getAttribute('data-list-name'));
+        // h5新增的获取自定义属性的方法 它只能获取data-开头的
+        // dataset 是一个集合里面存放了所有以data开头的自定义属性
+        console.log(div.dataset);
+        console.log(div.dataset.index);
+        console.log(div.dataset['index']);
+        // 如果自定义属性里面有多个-链接的单词，我们获取的时候采取 驼峰命名法
+        console.log(div.dataset.listName);
+        console.log(div.dataset['listName']);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跑马灯标签</title>
+    <style>
+        marquee {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<!-- 
+    behavior：设置滚动类型,scroll滚动到边界停止，alternate滚动到边界就弹回
+    direction：设置滚动方向
+    scrollamount:设置滚动速度，值越大，滚动速度越快
+    loop：设置滚动次数，默认-1，无线滚动
+ -->
+
+<body>
+    <h4>滚动到边界停止</h4>
+    <marquee behavior="scroll" direction="left" scrollamount="10" loop="2">yjxz</marquee>
+    <marquee behavior="scroll" direction="right" scrollamount="10" loop="-1">yjxz</marquee>
+    <marquee behavior="scroll" direction="top" scrollamount="10" loop="-1">yjxz</marquee>
+    <marquee behavior="scroll" direction="bottom" scrollamount="10" loop="-1">yjxz</marquee>
+    <br>
+    <br>
+    <h4>滚动到边界就弹回</h4>
+    <marquee behavior="alternate" direction="left" scrollamount="10" loop="2">yjxz</marquee>
+    <marquee behavior="alternate" direction="right" scrollamount="10" loop="-1">yjxz</marquee>
+    <marquee behavior="alternate" direction="top" scrollamount="10" loop="-1">yjxz</marquee>
+    <marquee behavior="alternate" direction="bottom" scrollamount="10" loop="-1">yjxz</marquee>
+    <h4>滚动图片</h4>
+    <marquee behavior="alternate" direction="left" scrollamount="10" loop="-1">
+        <img src="images/down.jpg" width="20px" height="20px" alt="">
+    </marquee>
+</body>
+
+</html>

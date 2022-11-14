@@ -1,0 +1,29 @@
+/*
+@mixin whc($w, $h, $c){
+  width: $w;
+  height: $h;
+  background: $c;
+}
+ */
+
+@mixin whc($w: 100px, $h: 100px, $c: #000) {
+    width: $w;
+    height: $h;
+    background: $c;
+}
+
+.box1 {
+    //width: 300px;
+    //height: 300px;
+    //background: red;
+    @include whc(300px, 300px, red);
+}
+
+.box2 {
+    //width: 200px;
+    //height: 200px;
+    //background: blue;
+    //@include whc(200px, 200px, blue);
+    //@include whc();
+    @include whc($c: blue);
+}

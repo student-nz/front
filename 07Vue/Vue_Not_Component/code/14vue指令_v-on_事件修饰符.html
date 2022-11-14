@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>14vue指令_v-on_事件修饰符</title>
+    <script src="js/vue-2.6.12.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .a {
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+        
+        .b {
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+        
+        .c {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--这里就是MVVM中的View-->
+    <div id="app">
+        <!-- 1. 默认情况下事件的回调函数可以反复的执行, 只要事件被触发就会执行 -->
+        <!-- <button v-on:click="myFn">我是按钮</button> -->
+
+        <!-- 2. 如果想让事件监听的回调函数只执行一次, 那么就可以使用.once修饰符 -->
+        <!-- <button v-on:click.once="myFn">我是按钮</button> -->
+
+        <!-- 3. 如果想阻止元素的默认行为, 那么可以使用.prevent修饰符 -->
+        <!-- <a href="http://www.baidu.com" v-on:click.prevent="myFn">我是A标签</a> -->
+        <!-- 4. 默认情况下载嵌套的元素中, 如果都监听了相同的事件, 那么会触发事件冒泡,如果想阻止事件冒泡, 那么可以使用.stop修饰符 -->
+        <!-- <div class="a" @click="myFn1">
+            <div class="b" @click.stop="myFn2">
+                <div class="c" @click="myFn3"></div>
+            </div>
+        </div> -->
+
+        <!-- 5. 如果想让回调只有当前元素触发事件的时候才执行, 那么就可以使用.self修饰符 -->
+        <!-- <div class="a" @click="myFn1">
+            <div class="b" @click.self="myFn2">
+                <div class="c" @click="myFn3"></div>
+            </div>
+        </div> -->
+
+        <!-- 6. 默认情况下是事件冒泡, 如果想变成事件捕获, 那么就需要使用.capture修饰符 -->
+        <div class="a" @click.capture="myFn1">
+            <div class="b" @click.capture="myFn2">
+                <div class="c" @click.capture="myFn3"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 这里就是MVVM中的View Model
+        let vue = new Vue({
+            el: '#app',
+            // 这里就是MVVM中的Model
+            data: {},
+            // 专门用于存储监听事件回调函数
+            methods: {
+                myFn() {
+                    alert('lnj');
+                },
+                myFn1() {
+                    console.log("爷爷");
+                },
+                myFn2() {
+                    console.log("爸爸");
+                },
+                myFn3() {
+                    console.log("儿子");
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

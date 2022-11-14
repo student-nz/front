@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>52正则-分组-非捕获性分组</title>
+</head>
+
+<body>
+    <script>
+        // 1. 在js中
+        // ()表示捕获分组，() 会把每个分组里的匹配的值保存在RegExp对象中，使用$n(n是一个数字，表示第n个捕获组的内容)访问
+        // (?:)表示非捕获分组，和捕获分组唯一的区别在于，非捕获分组匹配的值不会保存起来
+
+        // 2. 前瞻、负前瞻、本身、后顾、负后顾、
+        // 前瞻：
+        // A(?=B)   //查找B前面的A
+        // 负前瞻：
+        // A(?!B)   //查找后面不是B的A
+        // 本身：
+        // (?:B)
+        // 后顾：
+        // (?<=B)A   //查找B后面的A
+        // 负后顾：
+        // (?<!B)A   //查找前面不是B的A
+        console.log("我是中国人".replace(/我是(?=中国)/, "炫H5")) // '炫H5中国人'，匹配的是中国前面的'我是'
+        console.log("我是中国人".replace(/(?!中国)/, "炫H5")) // '炫H5我是中国人'
+        console.log("我是中国人".replace(/(?:中国)/, "炫H5")) // '我是炫H5人'，匹配'中国'本身
+        console.log("我是中国人".replace(/(?<=中国)人/, "炫H5")) // '我是中国炫H5'，匹配的是中国后面的'人'
+        console.log("我是中国人".replace(/(?<!中国)/, "炫H5")) // '炫H5我是中国人'
+    </script>
+</body>
+
+</html>

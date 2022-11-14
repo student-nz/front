@@ -1,0 +1,24 @@
+/*
+@mixin animate($name, $time, $mode, $delay){
+  transition: $name $time $mode $delay;
+}
+ */
+/*
+@mixin animate($args...){
+  transition: $args;
+}
+ */
+div {
+  width: 200px;
+  height: 200px;
+  background: red;
+  -webkit-transition: all 4s linear, 0s;
+  transition: all 4s linear, 0s;
+}
+
+div:hover {
+  width: 400px;
+  height: 400px;
+  background: blue;
+}
+/*# sourceMappingURL=08sass中的可变参数.css.map */

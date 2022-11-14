@@ -1,0 +1,8 @@
+div {
+  width: 0;
+  height: 0;
+  border-width: 50px;
+  border-style: solid solid solid solid;
+  border-color: transparent transparent blue transparent;
+}
+/*# sourceMappingURL=13sass中的条件判断.css.map */

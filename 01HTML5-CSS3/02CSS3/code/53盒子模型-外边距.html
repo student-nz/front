@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>50盒子模型-外边距</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        span {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background-color: red;
+        }
+        
+        div {
+            height: 100px;
+            border: 1px solid #000;
+        }
+        
+        .box1 {
+            /*
+            margin-top:20px;
+            margin-right:40px;
+            margin-bottom:80px;
+            margin-left:160px;
+            */
+            /*margin:20px 40px 80px 160px;*/
+            /*margin:20px 40px 80px;*/
+            /*margin:20px 40px;*/
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="box1">我是span</span><span class="box2">我是span</span><span class="box3">我是span</span>
+    <div class="box4"></div>
+</body>
+
+</html>

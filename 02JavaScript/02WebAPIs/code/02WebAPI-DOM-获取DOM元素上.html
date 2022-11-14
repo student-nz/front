@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>02WebAPI-DOM-获取DOM元素上</title>
+</head>
+
+<body>
+    <div class="father">
+        <form>
+            <input type="text" name="test">
+            <input type="password" name="test">
+        </form>
+    </div>
+    <div class="father" id="box">我是div</div>
+
+    <script>
+        // 1. 通过id获取指定元素
+        let oDiv = document.getElementById("box");
+        console.log(oDiv);
+        console.log(typeof oDiv);
+        console.log('---------------------------------------')
+
+        // 2.通过class名称获取元素
+        let oDivs = document.getElementsByClassName("father");
+        console.log(oDivs);
+        console.log('---------------------------------------')
+
+
+        // 3.通过name名称获取
+        // getElementsByName 在不同的浏览器其中工作方式不同。 在IE和Opera中， getElementsByName() 方法还会返回那些 id 为指定值的元素。 *
+        let oDivs = document.getElementsByName("test");
+        console.log(oDivs);
+        console.log('---------------------------------------')
+
+
+        // 4.通过标签名称获取
+        let oDivs = document.getElementsByTagName("div");
+        console.log(oDivs);
+        console.log('---------------------------------------')
+
+
+        /*
+        5.通过选择器获取
+        */
+        // let oDiv = document.querySelector("#box");
+        // let oDiv = document.querySelector(".father");
+        let oDiv = document.querySelector("div>form");
+        console.log(oDiv);
+        console.log('---------------------------------------')
+
+
+        // 6.通过选择器获取
+        let oDivs = document.querySelectorAll(".father");
+        console.log(oDivs);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>22.视频标签</title>
+</head>
+<!-- 
+        video:视频标签
+        src：链接URL
+        autoplay：是否自动播放
+        controls：是否显示控制条
+        poster：视频没有 播放之前显示的占位图片
+        loop：循环播放
+        preload：预加载视频
+        muted：禁音
+        width/height：和img标签一样
+     -->
+
+<body>
+    <video src="play/sb1.webm"></video>
+    <br>
+    <br>
+    <video src="play/sb1.webm" autoplay></video>
+    <br>
+    <br>
+    <video src="play/sb1.webm" autoplay controls></video>
+    <br>
+    <br>
+    <video src="play/sb1.webmss" autoplay controls poster="images/img.jpg"></video>
+    <br>
+    <br>
+    <video src="play/sb1.webm" autoplay contronls poster="images/img.jpg" loop></video>
+    <br>
+    <br>
+    <video src="play/sb1.webm" autoplay controls poster="images/img.jpg" loop preload="images/down.jpg"></video>
+    <br>
+    <br>
+    <video src="play/sb1.webm" autoplay controls poster="images/img.jpg" loop preload="images/down.jpg" muted></video>
+    <br>
+    <br>
+    <video src="play/sb1.webm" autoplay controls poster="images/img.jpg" loop preload="images/down.jpg" muted width="100px" height="100px"></video>
+
+</body>
+
+</html>

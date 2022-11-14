@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>17构造函数创建对象</title>
+    <script>
+        // 1. 构造函数创建对象 
+        function Person(name, age) {
+            // 2. 实例成员就是构造函数内部通过this添加的成员
+            this.name = name;
+            this.age = age;
+            this.call = function() {
+                console.log(this.name + '打电话给谁');
+
+            }
+        }
+        var nz = new Person('政哥', 21)
+        nz.call();
+        // 3. 静态成员就是通过构造函数本身上添加的成员
+        Person.sex = '男';
+        // 4. 静态成员只能通过构造函数来访问,不能通过对象来访问
+        console.log(Person.sex);
+        console.log(nz.sex); // undefined
+        // 5. 实例成员通过对象来访问
+        console.log(nz.name);
+        console.log(Person.name); // Person（构造函数名）
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>35ES6新特性-扩展运算符</title>
+</head>
+
+<body>
+    <div>1</div>
+    <div>4</div>
+    <div>3</div>
+    <div>6</div>
+    <div>2</div>
+    <div>5</div>
+    <script>
+        // 1. 扩展运算符可以将数组拆分成以逗号分隔的参数序列
+        // let ary = ["a", "b", "c"];
+        // // ...ary // "a", "b", "c"
+        // console.log(...ary)
+        // console.log("a", "b", "c")
+
+        // 2. 扩展运算符应用于数组合并
+        // let ary1 = [1, 2, 3];
+        // let ary2 = [4, 5, 6];
+        // // ...ary1 // 1, 2, 3
+        // // ...ary1 // 4, 5, 6
+        // let ary3 = [...ary1, ...ary2];
+        // console.log(ary3)
+
+        // 3. 合并数组的第二种方法
+        // let ary1 = [1, 2, 3];
+        // let ary2 = [4, 5, 6];
+
+        // ary1.push(...ary2);
+        // console.log(ary1)
+
+        // 4. 利用扩展运算符将伪数组转换为真正的数组
+        var oDivs = document.getElementsByTagName('div');
+        console.log(oDivs)
+        var ary = [...oDivs];
+        ary.push('a');
+        console.log(ary);
+
+        // 5. 扩展运算符用在对象上为深拷贝
+        var obj1 = {
+            name: 'yjxz',
+            age: 21
+        }
+
+        var obj2 = {
+            ...obj1
+        }
+
+        console.log(obj1)
+        console.log(obj2)
+    </script>
+</body>
+
+</html>

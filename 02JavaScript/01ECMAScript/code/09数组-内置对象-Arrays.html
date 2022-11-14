@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09内置对象-数组-Arrays</title>
+    <script>
+        // 1. 利用new 创建空数组 
+        var arr1 = new Array();
+        // 2. 利用数组字面量创建数组 []
+        var arr2 = []; // 字面量创建空数组
+        var arr3 = [1, 2, 'yjxz', true]; // 数组可以存放任何类型元素
+        // 3. 访问数组元素
+        console.log(arr1[0]); // 通过索引访问
+        // 4. 检测数组
+        console.log(arr3 instanceof Array);
+        console.log(Array.isArray(arr3));
+        // 5. 数组末尾添加一个或多个元素，并返回新的长度
+        console.log(arr3.push(1, 2, 3, 4));
+        // 6. 删除数组最后一个元素，并且返回被删除元素的值
+        console.log(arr3.pop());
+        // 7. 数组开头添加一个或多个元素，并返回新的长度
+        console.log(arr3.unshift(1, 2, 3, 4));
+        // 8. 删除数组第一个元素，并且返回被删除元素的值
+        console.log(arr3.shift());
+        // 9. 反转数组，返回新数组
+        console.log(arr3.reverse());
+        // 10. 对数组进行排序，返回新数组
+        console.log(arr3.sort());
+        // 11. 查找給定元素的第一个索引，有则返回，否则返回-1
+        console.log(arr3.indexOf(1));
+
+        // 12. 查找給定元素的最后一个索引，有则返回，否则返回-1
+        console.log(arr3.lastIndexOf());
+        // 13. 数组转换为字符串，逗号分隔每一项，返回字符串
+        console.log(arr3.toString());
+        // 14. 把数组中所有元素转换为一个字符串，分隔符指定
+        console.log(arr3.join('|'));
+        // 15. 连接两个或多个数组且不影响原数组，返回一个新的数组
+        console.log(arr3.concat(arr1));
+        // 16. 数组截取，返回被截取项目的新数组
+        arr3.slice(1, 10);
+        // 17. 数组从指定位置开始删除指定个数的数组元素，返回删除项目的新数组，会影响原数组
+        var arr4 = [1, 2, 4, 5, 6, 7]
+        console.log(arr4);
+        console.log(arr4.splice(0, 2));
+        console.log(arr4)
+        console.log('------------------------------------')
+
+        // 18. 数组遍历forEach
+        var sum1;
+        arr4.forEach(function(value, index, array) {
+            console.log('数组元素: ' + value + '索引号: ' + index + '数组本身: ' + array);
+            sum1 += value;
+        })
+        console.log(sum1);
+        console.log('------------------------------------')
+            // 19. 数组元素筛选filter()，返回新数组
+        var arr5 = arr4.filter(function(value, index, array) {
+            console.log('数组元素: ' + value + '索引号: ' + index + '数组本身: ' + array);
+            return value % 2 === 0;
+        })
+        console.log(arr5)
+            // 20. 查找是否满足条件的元素
+        console.log('------------------------------------')
+        var flag1 = arr4.some(function(value, index, array) {
+            console.log('数组元素: ' + value + '索引号: ' + index + '数组本身: ' + array);
+            return value == '2';
+        });
+        console.log(flag1)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

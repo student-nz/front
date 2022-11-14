@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>77传统布局-定位元素-index属性</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*
+            div{
+                width: 100px;
+                height: 100px;
+            }
+            .box1{
+                background-color: red;
+                position: relative;
+                left: 0;
+                top: 0;
+            }
+            .box2{
+                background-color: green;
+                position: absolute;
+                left: 50px;
+                top: 50px;
+            }
+            .box3{
+                background-color: blue;
+                position: fixed;
+                left: 100px;
+                top: 100px;
+            }
+            */
+        
+        .father1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .father2 {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .son1 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+            z-index: 1;
+        }
+        
+        .son2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            left: 250px;
+            top: 50px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    -->
+    <div class="father1">
+        <div class="son1"></div>
+    </div>
+    <div class="father2">
+        <div class="son2"></div>
+    </div>
+</body>
+
+</html>

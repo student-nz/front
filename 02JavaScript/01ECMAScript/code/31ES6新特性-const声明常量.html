@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>31ES6新特性-const声明变量</title>
+    <script>
+        // 1. const声明变量具有块级作用域
+        // if (true) {
+        // 	const a = 10;
+        // 	if (true) {
+        // 		const a = 20;
+        // 		console.log(a);
+        // 	}
+        // 	console.log(a);
+        // }
+        // console.log(a);
+
+        // 2. const声明的常量必须赋初始值
+        const PI = 3.14;
+
+        // 3. 常量声明后值不可更改 
+        // const PI = 3.14;
+        // PI = 100;
+        const arr = [100, 200];
+        arr[0] = 123;
+        arr = [1, 2]
+        console.log(ary);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

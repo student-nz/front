@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>08vue指令_v-show_条件渲染</title>
+    <script src="js/vue-2.6.12.js"></script>
+</head>
+
+<body>
+
+    <!--这里就是MVVM中的View-->
+    <div id="app">
+        <!-- <p v-show="show">我是true</p> -->
+        <!-- <p v-show="hidden">我是false</p> -->
+        <!-- <p v-show="true">我是true</p> -->
+        <!-- <p v-show="false">我是false</p> -->
+        <!-- <p v-show="age >= 18">我是true</p> -->
+        <!-- <p v-show="age < 18">我是false</p> -->
+        <!-- <p v-show="show">我是段落1</p> -->
+        <p v-show="hidden">我是段落2</p>
+    </div>
+    <script>
+        // 这里就是MVVM中的View Model
+        let vue = new Vue({
+            el: '#app',
+            // 这里就是MVVM中的Model
+            data: {
+                show: true,
+                hidden: false,
+                age: 18
+            }
+        });
+    </script>
+</body>
+
+</html>

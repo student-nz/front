@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>27vue组件-组件中的data和methods</title>
+    <script src="js/vue-2.6.12.js"></script>
+</head>
+
+<body>
+    <!--这里就是MVVM中的View-->
+    <div id="app">
+        <button @click="appFn">我是按钮</button>
+        <p>{{appMsg}}</p>
+        <abc></abc>
+    </div>
+    <template id="info">
+        <div>
+            <img src="images/fm.jpg" />
+            <button @click="abcFn">我是按钮</button>
+            <p>{{abcMsg}}</p>
+        </div>
+    </template>
+    <script>
+        // 自定义全局组件
+        Vue.component("abc", {
+            // 在创建组件指定组件的模板的时候, 模板只能有一个根元素
+            template: "#info",
+            methods: {
+                abcFn() {
+                    alert("abcFn");
+                }
+            },
+
+            // 在自定义组件中不能像在vue实例中一样直接使用data，而是必须通过返回函数的方式来使用data
+            data: function() {
+                return {
+                    abcMsg: "学院"
+                }
+            }
+        });
+        // 这里就是MVVM中的View Model
+        let vue = new Vue({
+            el: '#app',
+            // 这里就是MVVM中的Model
+            data: {
+                appMsg: "yjxz"
+            },
+            // 专门用于存储监听事件回调函数
+            methods: {
+                appFn() {
+                    alert("appFn");
+                }
+            },
+            // 专门用于定义计算属性的
+            computed: {}
+        });
+    </script>
+</body>
+
+</html>

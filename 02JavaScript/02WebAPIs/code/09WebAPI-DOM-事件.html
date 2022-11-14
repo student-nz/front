@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>08WebAPI-DOM-事件</title>
+</head>
+
+<body>
+    <button>我是按钮</button>
+    <a href="http://www.baidu.com">我是a标签</a>
+    <script>
+        let oBtn = document.querySelector("button");
+        // 1. 事件绑定
+        oBtn.onclick = function() {
+                alert("按钮被点击了");
+            }
+            // 如果给元素添加了和系统同名的事件, 我们添加的事件不会覆盖系统添加的事件
+        let oA = document.querySelector("a");
+        oA.onclick = function() {
+            alert("a标签被点击了");
+            // 以下含义：用我们添加的事件覆盖掉系统默认的事件
+            return false;
+        }
+    </script>
+</body>
+
+</html>

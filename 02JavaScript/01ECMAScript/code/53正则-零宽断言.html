@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>53正则-零宽断言</title>
+</head>
+
+<body>
+    <script>
+        // 1. js正则表达式只支持零宽先行断言
+        // 零宽先行断言可以分为正向零宽先行断言（判断字符后面必须匹配regexp）和负向零宽先行断言(判断字符后面不能匹配regexp)
+
+        // 2. 正向零宽先行断言
+        var str = 'abABb'
+        var regexp = /ab(?=[A-Z])/
+        var arr1 = str.match(regexp)
+        console.log(arr1)
+
+
+        // 3. 负向零宽先行断言
+        var str = 'abABb'
+        var regexp = /ab(?![A-Z])/
+        var arr2 = str.match(regexp)
+            // 返回的结果是null,这是因为match方法没有匹配到结果时的返回值
+        console.log(arr2)
+            // 可以看出，js中的零宽断言只能实现断言位置后面能不能匹配某个regexp,不能判断断言位置的前面能不能匹配某个regexp，即不支持零宽后发断言
+    </script>
+</body>
+
+</html>

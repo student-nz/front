@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03后代选择器</title>
+    <style>
+        ol li {
+            color: pink;
+        }
+        
+        ol li a {
+            color: red;
+        }
+        
+        .nav li a {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>我是ol 的孩子1</li>
+        <li>我是ol 的孩子2</li>
+        <li>我是ol 的孩子3</li>
+        <li><a href="#">我是我是ol 孙子1</a></li>
+        <li><a href="#">我是我是ol 孙子2</a></li>
+        <li><a href="#">我是我是ol 孙子3</a></li>
+    </ol>
+    <br>
+    <ul>
+        <li>我是ul 的孩子1</li>
+        <li>我是ul 的孩子2</li>
+        <li>我是ul 的孩子3</li>
+        <li><a href="#">我是ul 的孙子1</a></li>
+        <li><a href="#">我是ul 的孙子2</a></li>
+        <li><a href="#">我是ul 的孙子3</a></li>
+    </ul>
+    <br>
+    <ul class="nav">
+        <li>我是类名为nav标签 的孩子1</li>
+        <li>我是类名为nav标签 的孩子2</li>
+        <li>我是类名为nav标签 的孩子3</li>
+        <li><a href="#">我是类名为nav标签 的孙子1</a></li>
+        <li><a href="#">我是类名为nav标签 的孙子2</a></li>
+        <li><a href="#">我是类名为nav标签 的孙子3</a></li>
+        <li><a href="#">我是类名为nav标签 的孙子4</a></li>
+    </ul>
+</body>
+
+</html>

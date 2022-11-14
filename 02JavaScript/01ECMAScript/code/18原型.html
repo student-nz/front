@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>18原型</title>
+    <script>
+        // 1. 构造函数创建对象 
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            // this.call = function() {
+            //     console.log('我会唱歌');
+
+            // }
+        }
+        /* 2. 构造函数原型分配的函数是所有对象所共享的
+        每一个构造函数都有一个 prototype 属性指向另一个对象，这个对象的所有属性和方法，都会被构造函数拥有 */
+        // 3. 一般情况下,公共属性定义到构造函数里面, 公共方法定义到原型对象上
+        Person.prototype.call = function() {
+            console.log('打电话');
+        }
+        var nz01 = new Person('政哥01', 18);
+        var nz02 = new Person('政哥02', 19);
+        console.log(nz01.call === nz02.call);
+        console.dir(Person);
+        nz01.call();
+        nz02.call();
+        console.log('-----------------');
+        // 4. 对象身上系统会自动添加一个 __proto__ 指向我们构造函数的原型对象 prototype
+        console.log(nz01.__proto__ === nz02.prototype);
+
+        // 5. 如果我们修改了原来的原型对象,给原型对象赋值的是一个对象,则必须手动的利用constructor指回原来的构造函数
+        Person.prototype = {
+            constructor: Person,
+            sing: function() {
+                console.log('我会唱歌');
+            },
+            movie: function() {
+                console.log('我会演电影');
+            }
+        }
+        var nz03 = new Person('政哥03', 21);
+        var nz04 = new Person('政哥04', 22);
+
+        nz03.sing();
+        nz04.sing();
+        nz03.movie();
+        nz04.movie();
+        console.log(Person.prototype);
+        console.log(nz03.__proto__);
+        console.log(Person.prototype.constructor);
+        console.log(nz04.__proto__.constructor);
+        // 6. 原型链
+        console.log(Person.prototype);
+        // 我们Person原型对象里面的__proto__原型指向的是 Object.prototype
+        console.log(Person.prototype.__proto__ === Object.prototype);
+        // Object.prototype原型对象里面的__proto__原型 最终指向为 null
+        console.log(Object.prototype.__proto__);
+        // 7. 利用原型扩展内置对象
+        Array.prototype.sum =
+            function() {
+                var sum = 0;
+                for (var i = 0; i < this.length; i++) {
+                    sum += this[i];
+                }
+                return sum;
+            }
+        var arr = [1, 2, 3];
+        console.log(arr.sum());
+        console.log(Array.prototype);
+        var arr1 = new Array(11, 22, 33);
+        console.log(arr1.sum());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

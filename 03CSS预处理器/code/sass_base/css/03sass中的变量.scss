@@ -1,0 +1,23 @@
+$w: 200px;
+// 后定义覆盖先定义
+// $w: 600px;
+$h: 300px;
+// 可以把变量赋值给其它变量
+//$h: $w;
+.box1 {
+    $w: 666px;
+    width: $w;
+    height: $h;
+    background: red;
+    margin-bottom: 20px;
+}
+
+.box2 {
+    width: $w;
+    height: $h;
+    background: blue;
+}
+
+// 和LESS中变量不同的是
+// SASS中变量不是延迟加载, 不可以先使用后定义
+//$w: 200px;

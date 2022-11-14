@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08链接伪类选择器</title>
+    <style>
+        /* 书写顺序不能乱，否则，效果不能控制！ */
+        /* 1.未访问的链接状态*/
+        
+        a:link {
+            color: #333;
+            text-decoration: none;
+        }
+        /*2. 已访问过的链接状态 */
+        
+        a:visited {
+            color: orange;
+        }
+        /*3. 悬停时的链接状态 */
+        
+        a:hover {
+            color: skyblue;
+        }
+        /* 4.按下还没有弹起鼠标时的链接状态 */
+        
+        a:active {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">看效果1</a>
+    <a href="http://www.baidu.com">看效果2</a>
+</body>
+
+</html>

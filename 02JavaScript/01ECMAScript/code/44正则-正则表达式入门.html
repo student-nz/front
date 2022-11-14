@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>44正则-正则表达式入门</title>
+</head>
+
+<body>
+
+    <script>
+        // 1. 创建正则对象语法
+        // 语法1：(Perl 风格)
+        // var reg = /pattern/ [flags]
+        // 语法2：
+        // var reg = new RegExp("pattern", ["flags"])
+
+        // 2. 定义字符串
+        let str = 'abc';
+        // 3. 定义正则表达式
+        let reg = /abc/;
+        // 4. test测试字符串是否符合规则（符合规则返回true，不符合规则返回false）
+        console.log('test测试->'.concat(reg.test(str))); // true
+
+        // 5. 模式 i 忽视大小写
+        reg = /ABC/i
+        console.log('忽略大小写->'.concat(reg.test(str))); // true
+
+        str = '\nabcABC\nac';
+        console.log(str);
+        // 6. 全局查找（某一子串符合规则即为true）
+        reg = /ac/g;
+        console.log('全局查找->'.concat(reg.test(str)));
+
+        // 7. match将查找到的结果字符串作为数组返回
+        console.log('match->'.concat(str.match(reg)))
+
+        // 8. []里面字符任意出现一个，即匹配成功
+        str = '@￥%';
+        reg = /[0-9]/; //数字
+        console.log('[]->'.concat(reg.test(str)));
+        reg = /[0-9a-zA-Z]/; // 数字和字母
+        console.log('[]->'.concat(reg.test(str)));
+        //9. 量词 次数     ? 0~1      * 0~    + 1~     . 任意字符
+        str = 'a123456789a';
+        reg = /a[0-9]*a/; // aa a.a a...a
+        console.log('10. 量词'.concat(reg.test(str)));
+
+        reg = /a[0-9]+a/; // aa a.a a...a
+        console.log(reg.test(str));
+
+        reg = /a[0-9]?a/; // aa a.a
+        console.log(reg.test(str));
+
+        //10. 量词 {n} {n,m} {n,}
+        reg = /a[0-9]{3}a/; // axxxa{n} 指定出现n次
+        console.log('11. 量词'.concat(reg.test(str)));
+
+        reg = /a[0-9]{3,5}a/; // axxxa  指定出现 3 | 4 | 5 次   {} 中不能出现空格
+        console.log(reg.test(str));
+
+        reg = /a[0-9]{3,}a/; // axxxa    指定出现 3 次 及其以上
+        console.log(reg.test(str));
+    </script>
+
+</body>
+
+</html>

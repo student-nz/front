@@ -1,0 +1,7 @@
+@import "06sass中的混合";
+div {
+    width: 200px;
+    height: 200px;
+    background: red;
+    @include center;
+}

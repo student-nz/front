@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>41vue组件-组件插槽-v-slot指令</title>
+    <script src="js/vue-2.6.12.js"></script>
+</head>
+
+<body>
+    <!--这里就是MVVM中的View-->
+    <div id="app">
+        <father></father>
+    </div>
+    <template id="father">
+        <div>
+            <son>
+                <template v-slot:default="abc">
+                    <li v-for="(name, index) in abc.names">{{name}}</li>
+                </template> -->
+    <!--
+            <template #default="abc">
+                <li v-for="(name, index) in abc.names">{{name}}</li>
+            </template>
+            -->
+    <!-- <template #one="abc">
+                    <li v-for="(name, index) in abc.names">{{name}}</li>
+                </template> -->
+    </son>
+    </div>
+    </template>
+    <template id="son">
+        <div>
+            <div>我是头部 {{names}}</div>
+            <slot v-bind:names="names">我是默认内容 {{names}}</slot>
+            <!-- <slot name="one" v-bind:names="names">我是默认内容 {{names}}</slot> -->
+            <div>我是底部</div>
+        </div>
+    </template>
+    <script>
+        // 父组件
+        Vue.component("father", {
+            template: "#father",
+            // 子组件
+            components: {
+                "son": {
+                    template: "#son",
+                    data: function() {
+                        return {
+                            names: ["zs", "ls", "ww", "zl"]
+                        }
+                    }
+                }
+            }
+        });
+        // 这里就是MVVM中的View Model
+        let vue = new Vue({
+            el: '#app',
+            // 这里就是MVVM中的Model
+            data: {},
+            // 专门用于存储监听事件回调函数
+            methods: {},
+            // 专门用于定义计算属性的
+            computed: {},
+            // 专门用于定义局部组件的
+            components: {}
+        });
+    </script>
+</body>
+
+</html>

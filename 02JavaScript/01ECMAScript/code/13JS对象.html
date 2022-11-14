@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13JS对象</title>
+    <script>
+        // 对象都是键值对形式，即key - value
+        // 1. 利用对象字面量创建对象 {}
+        var obj1 = {
+                name: 'yjxz',
+                age: 18,
+                sex: '男',
+                call: function() {
+                    console.log('政哥打电话！')
+                }
+            }
+            // 2. 调用对象属性
+        console.log(obj1.name);
+        console.log(obj1['name']); // 必须加引号
+        // 3. 调用对象行为
+        obj1.call();
+
+        console.log('------------------------------')
+            // 1. 构造函数创建空对象
+        var obj2 = new Object();
+        // 2. 为对象添加属性
+        obj2.name = 'yjxz';
+        obj2.age = 18;
+        obj2.sex = '男';
+        // 3. 为对象添加行为
+        obj2.call = function() {
+                console.log('政哥打电话！');
+            }
+            // 4. 调用对象属性
+        console.log(obj2.name);
+        // 5. 调用对象行为
+        console.log(obj2['name']); // 必须加引号
+        console.log(obj2.call);
+        console.log('------------------------------')
+            // 1. 构造函数创建对象
+        function Person(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.call = function(called) {
+                console.log(called);
+            }
+        }
+
+        var nz = new Person('政哥', 21, '男');
+        console.log(nz);
+        console.log('------------------------------')
+            // 1. 遍历对象 for...in
+        for (var k in obj2) {
+            console.log(k); // k 得到的是属性名
+            console.log(obj2[k]); // obj2[k]得到是属性值
+        }
+        // 2. 遍历对象属性 keys以及属性值
+        var obj = {
+            id: 1,
+            pname: '小米',
+            price: 1999,
+            num: 2000
+        };
+        var myarr = Object.keys(obj);
+        console.log(myarr);
+        myarr.forEach(function(myAttr) {
+            console.log('属性：'.concat(myAttr).concat(' 属性值：').concat(obj[myAttr]));
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

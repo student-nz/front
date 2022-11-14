@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>67传统布局-浮动元素-清除浮动3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box1 {
+            background-color: red;
+            /*margin-bottom: 10px;*/
+        }
+        
+        .box2 {
+            background-color: green;
+            /*margin-top: 10px;*/
+        }
+        
+        .box1 p {
+            width: 100px;
+            background-color: blue;
+        }
+        
+        .box2 p {
+            width: 100px;
+            background-color: yellow;
+        }
+        
+        p {
+            float: left;
+        }
+        
+        .wall {
+            clear: both;
+        }
+        
+        .h20 {
+            height: 20px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <p>我是文字1</p>
+        <p>我是文字1</p>
+        <p>我是文字1</p>
+        <div class="wall h20"></div>
+    </div>
+
+    <!--<div class="wall h20"></div>-->
+
+    <div class="box2">
+        <p>我是文字2</p>
+        <p>我是文字2</p>
+        <p>我是文字2</p>
+    </div>
+</body>
+
+</html>

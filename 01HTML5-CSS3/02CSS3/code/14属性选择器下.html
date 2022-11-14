@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>14属性选择器下</title>
+    <style>
+        /*
+            img[alt^=abc]{
+                color: red;
+            }
+            */
+        /* img[alt|=abc] {
+            color: red;
+        } */
+        
+        img[alt$=abc] {
+            color: blue;
+        }
+        /* img[alt*=abc] {
+            color: red;
+        } */
+        /*         
+        img[alt~=abc] {
+            color: red;
+        } */
+    </style>
+</head>
+
+<body>
+    <img src="" alt="abcdef">
+    <br>
+    <img src="" alt="abc-www">
+    <br>
+    <img src="" alt="abc ppp">
+    <br>
+    <img src="" alt="defabc">
+    <br>
+    <img src="" alt="ppp abc">
+    <br>
+    <img src="" alt="www-abc">
+    <br>
+    <img src="" alt="qq">
+    <br>
+    <img src="" alt="yy">
+    <br>
+    <img src="" alt="abcwwwmmm">
+    <br>
+    <img src="" alt="wwwmmmabc">
+    <br>
+    <img src="" alt="wwwabcmmm">
+    <br>
+    <img src="" alt="www-abc-mmm">
+    <br>
+    <img src="" alt="www abc mmm">
+    <br>
+    <img src="" alt="qq">
+</body>
+
+</html>

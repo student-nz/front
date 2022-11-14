@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>10WebAPI-DOM-注册事件三种方式</title>
+</head>
+
+<body>
+    <button id="btn">我是按钮</button>
+    <script>
+        var oBtn = document.getElementById("btn");
+        // 绑定事件三种方式
+        // 1.通过onxxx的方式来添加（由于是给属性赋值, 后赋值的会覆盖先赋值）
+        // oBtn.onclick = function () {
+        //     alert("666");
+        // }
+        // oBtn.onclick = function () {
+        //     alert("777");
+        // }
+
+        // 2.通过addEventListener方法添加（后添加的不会覆盖先添加的，事件名称不需要添加on，只支持最新的浏览器IE9）
+        // oBtn.addEventListener("click", function() {
+        //     alert("666");
+        // });
+        // oBtn.addEventListener("click", function() {
+        //     alert("777");
+        // });
+
+
+        // 3.通过attachEvent方法添加（后添加的不会覆盖先添加的，事件名称必须加上on，只支持低版本的浏览器）
+        // oBtn.attachEvent("onclick", function () {
+        //     alert("666");
+        // });
+        // oBtn.attachEvent("onclick", function () {
+        //     alert("777");
+        // });
+
+        // 4. 封装方法（提高兼容性）
+        addEvent(oBtn, "click", function() {
+            alert("666");
+        })
+        addEvent(oBtn, "click", function() {
+            alert("777");
+        })
+
+        function addEvent(ele, name, fn) {
+            if (ele.attachEvent) {
+                ele.attachEvent("on" + name, fn);
+            } else {
+                ele.addEventListener(name, fn);
+            }
+        }
+    </script>
+</body>

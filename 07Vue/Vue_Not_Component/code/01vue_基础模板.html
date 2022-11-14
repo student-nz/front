@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>01vue基础模板</title>
+    <!--1.下载导入Vue.js-->
+    <script src="js/vue-2.6.12.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{ name }}</p>
+    </div>
+    <script>
+        // 2.创建一个Vue的实例对象
+        let vue = new Vue({
+            // 3.告诉Vue的实例对象, 将来需要控制界面上的哪个区域
+            el: '#app',
+            // 4.告诉Vue的实例对象, 被控制区域的数据是什么
+            data: {
+                name: "yjxz"
+            }
+        });
+    </script>
+</body>
+
+</html>

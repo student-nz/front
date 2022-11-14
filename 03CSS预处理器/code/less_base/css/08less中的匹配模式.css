@@ -1,0 +1,17 @@
+/*
+@_: 表示通用的匹配模式
+
+什么是通用的匹配模式?
+无论同名的哪一个混合被匹配了, 都会先执行通用匹配模式中的代码
+*/
+div {
+  /*
+  混合的匹配模式
+  就是通过混合的第一个字符串形参,来确定具体要执行哪一个同名混合
+  */
+  width: 0;
+  height: 0;
+  border-style: solid solid solid solid;
+  border-width: 80px;
+  border-color: transparent transparent transparent green;
+}

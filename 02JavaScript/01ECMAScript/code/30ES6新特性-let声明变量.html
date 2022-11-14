@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>30ES6新特性-let声明变量</title>
+    <script>
+        // 	let声明变量具有块级作用域特性
+        //  var声明变量不具备块级作用域特性
+        if (true) {
+            let num = 100;
+            var abc = 200;
+        }
+        console.log(abc);
+        console.log(num)
+
+        // let声明变量存在暂时性死区问题
+        // var num = 10
+        // if (true) {
+        //     console.log(num);
+        //     let num = 20;
+        // }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

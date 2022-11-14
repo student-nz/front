@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>46正则-RegExp对象的属性</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //1. 定义正则规则
+        let myreg = /bat/igm;
+        let str = "this is a fat BAT.the fat bat is a female bat";
+
+        //2. exec() 方法用于检索字符串中的正则表达式的匹配,匹配成功返回一个数组，否则返回一个null
+        let arr = myreg.exec(str);
+        console.log(arr);
+        // 3. 原字符串
+        document.write("原字符串为:" + str + "<br />");
+        // 4. myreg.source: 返回模式匹配所用的文本
+        document.write("正则表达式为:" + myreg.source + "<br />");
+        // 5. myreg.ignoreCase: 忽视大小写是否已经设置（返回布尔值）
+        document.write("是否使用了i标记:" + myreg.ignoreCase + "<br />");
+        // 6. myreg.global: 全局匹配是否设置（返回布尔值）
+        document.write("是否使用了g标记:" + myreg.global + "<br />");
+        // 7. myreg.multiline: 多行搜索是否设置 有换行标记\n （返回布尔值）
+        document.write("是否使用了m标记:" + myreg.multiline + "<br />");
+        // 8. arr: 匹配结果
+        document.write("匹配的子字符串为:" + arr + "<br/>");
+        // 9. arr.index: 匹配结果在原字符串中起始的索引（以0开始）
+        document.write("匹配后的字符索引为:" + arr.index + "<br />");
+        // 10. myreg.lastIndex: 匹配结果的最后字符的下一个字符在原字符串的位置（设置标志 g 才能使用） 
+        document.write("下次匹配的起始位置为:" + myreg.lastIndex + "<br />"); //
+        // 11. test(): test测试字符串是否符合规则（符合规则返回true，不符合规则返回false）
+        while (myreg.test(str)) {
+            document.write("'bat' found. Index now at: " + myreg.lastIndex + "<br>");
+        }
+    </script>
+</body>
+
+</html>

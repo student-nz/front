@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>18css三大特性-优先级</title>
+    <style>
+        /* 
+            (行内, id, 类, 标签)
+            (0, 1, 0, 1) 
+        */
+        
+        #one {
+            color: red;
+        }
+        
+        .son {
+            color: blue;
+        }
+        
+        p {
+            color: green;
+        }
+        
+        div #one {
+            color: orange;
+        }
+        /* (0, 0, 2, 0) */
+        
+        .father .son {
+            color: skyblue;
+        }
+        /* 0, 0, 1, 1 */
+        
+        .father p {
+            color: purple;
+        }
+        /* 0, 0, 0, 2 */
+        
+        div p {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <p class="son" id="one">看效果1</p>
+    </div>
+</body>
+
+</html>

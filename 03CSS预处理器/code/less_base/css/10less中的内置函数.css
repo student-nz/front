@@ -1,0 +1,9 @@
+div {
+  width: 200px;
+  height: 200px;
+  background: url("../images/2.jpg");
+  background: #bfbf40;
+}
+div:hover {
+  background: #ffff00;
+}

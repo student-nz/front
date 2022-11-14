@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>03vue_双向数据传递</title>
+    <script src="js/vue-2.6.12.js"></script>
+</head>
+
+<body>
+
+    <!--这里就是MVVM中的View-->
+    <div id="app">
+        <p>{{ name }}</p>
+        <input type="text" v-model="msg">
+    </div>
+    <script>
+        // 这里就是MVVM中的View Model
+        let vue = new Vue({
+            el: '#app',
+            // 这里就是MVVM中的Model
+            data: {
+                name: "yjxz",
+                msg: "政哥"
+            }
+        });
+    </script>
+</body>
+
+</html>

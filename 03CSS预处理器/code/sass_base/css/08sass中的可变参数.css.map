@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA;;;;GAIG;AACH;;;;GAIG;AAIH,AAAA,GAAG,CAAA;EACD,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,GAAG;EALf,UAAU,EAOO,GAAG,CAAE,EAAE,CAAE,MAAM,EAAE,EAAE;CACrC;;AACD,AAAA,GAAG,AAAA,MAAM,CAAA;EACP,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,IAAI;CACjB",
+    "sources": [
+        "08sass中的可变参数.scss"
+    ],
+    "names": [],
+    "file": "08sass中的可变参数.css"
+}
